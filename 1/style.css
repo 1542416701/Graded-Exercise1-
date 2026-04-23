@@ -1,0 +1,189 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+body {
+  background-color: #ffffff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@font-face {
+  font-family: 'CustomMansalva';
+  src: url('./fonts/Mansalva-Regular.ttf') format('truetype');
+}
+
+#banner-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 50vh;
+  padding: 35px 25px 55px;
+  background: #8cb9c6 url('./assets/bg-totoro.png') no-repeat right bottom / auto 85%;
+}
+.title-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.title-gif {
+  height: 52px;
+}
+.main-heading {
+  margin: 0;
+  color: #ffffff;
+  font-size: 3.1rem;
+  font-family: 'CustomMansalva', cursive;
+}
+.banner-vid {
+  width: 65%;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  align-self: flex-start;
+  margin-left: 5%;
+}
+
+#top-nav {
+  position: sticky;
+  top: 0;
+  background-color: #f8c8d1;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  padding: 14px;
+  gap: 160px;
+}
+#top-nav a {
+  color: #222222;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 1.2px;
+}
+
+.film-gallery {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 25px 10px;
+}
+.film-item {
+  position: relative;
+  width: calc(20% - 12px);
+  min-width: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.film-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hover-info {
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 16px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+}
+.film-item:hover .hover-info {
+  visibility: visible;
+  opacity: 1;
+}
+.hover-info h3 { 
+  margin: 0 0 10px 0; 
+  font-size: 1.05rem; 
+}
+.hover-info p { 
+  margin: 0; 
+  font-size: 0.75rem; 
+  line-height: 1.45; 
+}
+
+.director-panel {
+  display: flex;
+  background-color: #a8d08d;
+  align-items: stretch;
+}
+.director-img {
+  width: 35%;
+  display: block;
+  object-fit: cover;
+}
+.quote-box {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 45px;
+  transition: background-color 0.35s;
+}
+.quote-box:hover {
+  background-color: #92b979;
+}
+.quote-text {
+  margin: 0 0 18px 0;
+  color: #000000;
+  font-size: 1.45rem;
+  font-weight: 700;
+  text-align: center;
+}
+.quote-author {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.site-footer {
+  background-color: #fce19a;
+  color: #222222;
+  padding: 14px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+@media screen and (max-width: 768px) {
+  .film-item { 
+    width: calc(50% - 16px); 
+  }
+  #top-nav { 
+    gap: 60px; 
+  }
+  #banner-area { 
+    background-position: center bottom; 
+    padding-bottom: 160px; 
+  }
+  .banner-vid { 
+    width: 90%; 
+    align-self: center; 
+    margin-left: 0; 
+  }
+  .director-panel { 
+    flex-direction: column; 
+  }
+  .director-img, .quote-box { 
+    width: 100%; 
+  }
+}
