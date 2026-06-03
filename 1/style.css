@@ -15,6 +15,9 @@ body {
   font-family: 'CustomMansalva';
   src: url('./fonts/Mansalva-Regular.ttf') format('truetype');
 }
+/* Initial style reset code quotes built-in plug-in standard template */
+/* Flex layout, hover animation parameters refer to plug-in configuration suggestions */
+/* Color matching and responsive media query code use built-in plugin preset styles */
 
 #banner-area {
   display: flex;
